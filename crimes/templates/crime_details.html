@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Details</title>
+</head>
+<body>
+    <h1>{{ section_code }}</h1>
+    <h2>Associated IPC Sections:</h2>
+    {% if ipc %}
+        <ul>
+            {% for Of in ipc %}
+                <li><strong>{{ Of.Description }}:</strong><br> {{ Of.Offense }}</li>
+                <li><h2>Punishment: </h2><strong><h3>{{ Of.Punishment }} </h3></strong></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No IPC sections found for this crime.</p>
+    {% endif %}
+</body>
+</html>
